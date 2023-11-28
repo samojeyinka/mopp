@@ -1,0 +1,32 @@
+<% if @article.errors.any? %>
+<h3>You encountered those errors</h3>
+<ul>
+  <% @article.errors.full_messages.each do |msg|%>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_with( model: @article, data:{turbo: false}, local: true) do |f| %>
+  <P>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </P>
+  <P>
+    <%= f.label :description %><br/>
+    <%= f.text_field :description %>
+  </P>
+
+  <P>
+    <%= f.label :content %><br/>
+    <%= f.text_area :content %>
+  </P>
+  <P>
+    <%= f.label :thumbnail %><br/>
+    <%= f.file_field :thumbnail %>
+  </P>
+  <P>
+    <%= f.submit %>
+  </P>
+  
+<% end %>

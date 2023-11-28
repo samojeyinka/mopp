@@ -1,0 +1,46 @@
+<section class="read_articles">
+    <div class="read_articles_column">
+<div class="thumbnail_in_read">
+ <%= image_tag(@article.thumbnail, width:300) if @article.thumbnail.attached?%>
+</div>
+<h1><%= @article.title%></h1>
+<div class="article_info">
+    <div class="article_profile">
+        <div class="article_profile_img">
+            <%= image_tag("userimage.avif", alt: "thumbnail" , class:"user_img") %>
+        </div>
+        <div class="article_profile_details">
+            <small class="article_profile_name">Samuel ojeyinka</small>
+            <small class="article_profile_username">@samueloje</small>
+        </div>
+    </div>
+    <div class="article_date">
+        <div class="article_date_on_read">Published on <%= @article.created_at.strftime("%b %d") %>
+    </div>
+</div>
+</div>
+
+<div class="article_read_desc">
+<p><%= @article.description%></p>
+</div>
+<div class="article_content"><%= @article.content%></div>
+
+<div class="read_articles_actions">
+    <div class="read_articles_actions_left">
+        <div class="reactions">
+            <i class="fa-regular fa-heart"></i>
+            <span class="reacts">2</span>
+        </div>
+        <div class="reactions">
+            <i class="fa-regular fa-comment"></i>
+            <span class="reacts">1</span>
+        </div>
+    </div>
+    <div class="read_articles_actions_right">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-square-whatsapp"></i>
+    </div>
+</div>
+</div>
+</section>  

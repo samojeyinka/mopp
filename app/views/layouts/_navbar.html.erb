@@ -1,0 +1,34 @@
+<header class="header">
+    <nav>
+        <div class="nav-left">
+            <div class="logo_box">
+                <%= image_tag("logo.png", alt: "Logo" , class: "logo" ) %>
+            </div>
+
+            <div class="search_box">
+                <div class="search_flex">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Search" />
+                </div>
+            </div>
+
+        </div>
+        <div class="nav-right">
+            <ul class="links">
+                <li class="nav_link nav_link_write">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <%= link_to 'Write', new_article_path %>
+                </li>
+
+                <button class="nav_btn nav_btn_signin">
+                    <%= link_to "Sign In" %>
+                </button>
+
+                <button class="nav_btn nav_btn_signup">
+                    <%= link_to "Sign Up" %>
+                </button>
+
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,133 @@
+
+.articles_container {
+    width: 70%;
+}
+
+.flex_articles_boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.each_article_box {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: .2rem;
+    position: relative;
+}
+
+.each_article_box::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.each_article_box_left {
+    width: 90%;
+}
+
+
+.each_article_box_left_top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.username_index {
+    text-transform: lowercase;
+    font-size: .9rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--text-gray-color);
+}
+
+.created_date_index {
+    font-size: .9rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--text-gray-color);
+}
+
+.each_article_box .user_img_index {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.each_article_box .user_img {
+    width: 100%;
+    height: 100%;
+}
+
+.thumbnail {
+    width: 200px;
+    height: 150px;
+}
+
+.thumbnail_img {
+    width: 100%;
+    height: 100%;
+}
+
+.each_article_box_left_middle {
+    padding: .5rem 0;
+}
+
+.each_article_box_left_middle .article_title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--tertiary-color);
+}
+
+.each_article_box_left_middle .article_description {
+    font-weight: 500;
+    max-width: 90%;
+    font-size: 1rem;
+    opacity: .9;
+
+}
+
+.each_article_box_left_bottom {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: .4rem;
+}
+
+
+
+
+.categories_flex {
+    display: flex;
+    gap: .5rem;
+}
+
+.categories_flex .article_category {
+    font-size: .9rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--tertiary-color);
+    padding: .1rem .5rem;
+    background: var(--secondary-color);
+    border-radius: 1rem;
+    opacity: .8;
+}
+
+
+.reactions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--text-gray-color);
+    cursor: pointer;
+
+}
