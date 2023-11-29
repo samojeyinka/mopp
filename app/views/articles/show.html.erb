@@ -18,8 +18,8 @@
             <%= image_tag("userimage.avif", alt: "thumbnail" , class:"user_img") %>
         </div>
         <div class="article_profile_details">
-            <small class="article_profile_name">Samuel ojeyinka</small>
-            <small class="article_profile_username">@samueloje</small>
+            <small class="article_profile_name"><%= @article.user.fullname if @article.user %></small>
+            <small class="article_profile_username">@<%= @article.user.username if @article.user %></small>
         </div>
     </div>
     <div class="article_date">

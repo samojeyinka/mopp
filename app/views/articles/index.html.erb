@@ -7,7 +7,7 @@
                     <div class="user_img_index">
                         <%= image_tag("userimage.avif", alt: "thumbnail" , class:"user_img") %>
                     </div>
-                    <div class="username_index">Samueloje</div>
+                    <div class="username_index"><%= article.user.username if article.user%></div>
                     <!-- <div class="created_date_index">@ <%= time_ago_in_words(article.created_at)%></div> -->
                     <div class="created_date_index"><%= article.created_at.strftime("%b %d") %>
                     </div>
