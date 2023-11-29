@@ -15,6 +15,7 @@ end
 
 def create 
   @article = Article.new(permit_fields)
+  @article.user = User.second
   if @article.save
     flash[:notice] = "Article created successfully"
   redirect_to @article
