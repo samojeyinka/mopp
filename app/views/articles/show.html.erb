@@ -1,6 +1,14 @@
 <section class="read_articles">
     <div class="read_articles_column">
+        <div class="article_read_actions">
+            <ul>
+                <li><i class="fa-solid fa-file-pen"></i><%= link_to "Edit", edit_article_path(@article)%></li>
+                <li><i class="fa-solid fa-trash"></i> <%= link_to "Delete", article_path(@article),
+                 data:{turbo_method: :delete, turbo_confirm: "Continue to delete?"} %></li>
+            </ul>
+        </div>
 <div class="thumbnail_in_read">
+
  <%= image_tag(@article.thumbnail, width:300) if @article.thumbnail.attached?%>
 </div>
 <h1><%= @article.title%></h1>
@@ -23,7 +31,7 @@
 <div class="article_read_desc">
 <p><%= @article.description%></p>
 </div>
-<div class="article_content"><%= @article.content%></div>
+<div class="article_content"><%= simple_format(@article.content) %></div>
 
 <div class="read_articles_actions">
     <div class="read_articles_actions_left">

@@ -1,0 +1,10 @@
+<% if @article.errors.any? %>
+<div class="error_con">
+<h3>Oops!😒</h3>
+<ul>
+  <% @article.errors.full_messages.each do |msg|%>
+    <li><i class="fa-regular fa-circle-xmark"></i><span><%= msg %></span></li>
+  <% end %>
+</ul>
+</div>
+<% end %>

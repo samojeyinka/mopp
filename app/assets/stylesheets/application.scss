@@ -1,5 +1,4 @@
 @import "bootstrap";
-
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
 
 
@@ -8,6 +7,8 @@
     --secondary-color: #d5d5d57d;
     --tertiary-color: #151515;
     --text-gray-color: #808080;
+    --success-color: #008000;
+    --danger-color: #ff0000;
 }
 
 body {
@@ -38,122 +39,124 @@ button {
     margin: auto;
 }
 
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
 
-.read_articles{
-    width: 58%;
+.artiicle_form {
+    width: 60%;
     margin: auto;
 }
 
-.read_articles_column{
+.form_con {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-.thumbnail_in_read{
+.form_con .form_box {
     width: 100%;
-    height: 28rem;
+    border-bottom: 2px solid var(--secondary-color);
 }
 
-.thumbnail_in_read img{
+.form_con .form_box input,
+.form_con .form_box textarea {
     width: 100%;
-    height: 100%;
 }
-.read_articles h1{
-    width:95%;
-    padding: .8rem 0;
+
+.form_con .form_box textarea {
+    height: 295px;
+    max-height: 295px;
+    min-height: 295px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+}
+
+
+.title_box {
     font-family: 'Roboto', sans-serif;
     color: var(--tertiary-color);
     font-size: 34px;
     font-weight: 700;
 }
 
-.article_info{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.article_profile{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.article_profile_img {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.article_profile_img img {
-    width: 100%;
-    height: 100%;
-}
-
-.article_profile_details{
-    display: flex;
-    flex-direction: column;
-}
-
-.article_profile_details small{
-    font-family: 'Roboto', sans-serif;
+.description_box {
     color: var(--tertiary-color);
-    font-size: .9rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
-.article_profile_details .article_profile_username {
-    color:var(--text-gray-color);
-    text-decoration: underline;
+.custom-file-upload {
+    display: inline-block;
     cursor: pointer;
-}
-
-.article_date_on_read{
+    padding: 10px 15px;
+    background: var(--secondary-color);
     color: var(--text-gray-color);
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 16px;
 }
 
+.form_box label {
+    color: var(--text-gray-color);
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
 
-.article_read_desc{
+.publish_btn {
     padding: .8rem;
-    width: 100%;
-    color: var(--text-gray-color);
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
     font-family: 'Roboto', sans-serif;
-    background:var(--secondary-color) ;
 }
 
-.article_content{
+
+.error_con {
+    padding: 1rem;
+    background: rgba(255, 0, 0, 0.08);
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.error_con h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+
+}
+
+.error_con ul {
     padding: 1rem 0;
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 28px;
+    position: relative;
 }
 
-.read_articles_actions{
-    margin: 3rem 0;
+.error_con ul::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(81, 36, 36);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.error_con ul li {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: var(--text-gray-color);
-}
-
-.read_articles_actions_left{
-    display: flex;
     gap: 1rem;
-    font-size: 1.1rem;
 }
 
-.read_articles_actions_right {
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    gap:1.1rem;
+.error_con .fa-circle-xmark {
+    color: var(--danger-color);
+    font-weight: 600;
 }
 
-.read_articles_actions_right i{
-    cursor: pointer;
+.error_con ul li span {
+    color: var(--danger-color);
+    font-weight: 500;
 }
