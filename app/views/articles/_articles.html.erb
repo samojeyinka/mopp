@@ -5,9 +5,16 @@
             <div class="each_article_box_left">
                 <div class="each_article_box_left_top">
                     <div class="user_img_index">
-                        <%= image_tag("userimage.avif", alt: "profile picture" , class:"user_img") %>
+                        <%= link_to user_path(article.user) do %>
+                        <% if article.user.ProfileImage.attached?%>
+                        <%= image_tag(article.user.ProfileImage,alt: "profile picture",class:"user_img") %>
+                        <% else %>
+                            <%= image_tag("userimage.avif", alt: "profile picture", class:"user_img") %>
+                                <%end%>
                     </div>
+                 
                     <div class="username_index"><%= article.user.username if article.user%></div>
+                    <% end %>
                     <!-- <div class="created_date_index">@ <%= time_ago_in_words(article.created_at)%></div> -->
                     <div class="created_date_index"><%= article.created_at.strftime("%b %d") %>
                     </div>
