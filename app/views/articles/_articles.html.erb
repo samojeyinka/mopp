@@ -1,0 +1,41 @@
+<section class="articles_container">
+    <div class="flex_articles_boxes">
+        <% @articles.each do |article| %>
+        <div class="each_article_box">
+            <div class="each_article_box_left">
+                <div class="each_article_box_left_top">
+                    <div class="user_img_index">
+                        <%= image_tag("userimage.avif", alt: "profile picture" , class:"user_img") %>
+                    </div>
+                    <div class="username_index"><%= article.user.username if article.user%></div>
+                    <!-- <div class="created_date_index">@ <%= time_ago_in_words(article.created_at)%></div> -->
+                    <div class="created_date_index"><%= article.created_at.strftime("%b %d") %>
+                    </div>
+                </div>
+                <div class="each_article_box_left_middle">
+                    <h2><%= link_to truncate(article.title, length: 100), article_path(article),class:"article_title" %></h2>
+                    <p class="article_description"><%= truncate(article.description, length: 100) %></p>
+                </div>
+                <div class="each_article_box_left_bottom">
+                    <div class="categories_flex">
+                        <button class="article_category">Travel</button>
+                        <button class="article_category">Football</button>
+                    </div>
+                    <div class="reactions">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="reacts">2</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="each_article_box_right">
+                <div class="thumbnail">
+                    <%= link_to article_path(article)  do%>
+                    <%= image_tag(article.thumbnail, width:300, class:"thumbnail_img") if article.thumbnail.attached? %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</section>

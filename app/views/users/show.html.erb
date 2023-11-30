@@ -1,0 +1,50 @@
+<div class="profile_page">
+    <div class="flex_op">
+<h4 class="text-center mb-4 profile_username">@<%= @user.username%></h4>
+<button class="fl_btn">Follow</button>
+</div>
+
+<div class="profile_top mt-3">
+<div class="profile_image">
+<%= image_tag(@user.ProfileImage) if @user.ProfileImage.attached?   %>
+</div>
+<div class="profile_blogs">
+    <strong>28</strong>
+    <span>Blogs</span>
+</div>
+<div class="profile_likes">
+    <strong>1.5M</strong>
+    <span>Likes</span>
+</div>
+<div class="profile_followers">
+    <strong>978K</strong>
+    <span>Followers</span>
+</div>
+<div class="profile_following">
+    <strong>6</strong>
+    <span>Following</span>
+</div>
+</div>
+
+<div class="profile_btm mt-3">
+    <strong><%= @user.fullname %></strong>
+    <div class="user_bio">
+        <P>
+            Passionate explorer 🌍 | Creative mind 🎨 | Tech enthusiast 🖥️ |
+             Making moments memorable ✨ | #AdventureSeeker</P>
+    </div>
+    <div class="user_links">
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+    </div>
+
+    <div class="mt-3">
+        <button class="edit_btn">Edit Profile</button>
+    </div>
+</div>
+<h2 class="text-center mb-4">Articles</h2>
+
+<%= render 'articles/articles' %>
+</div>

@@ -1,0 +1,49 @@
+
+
+.user_form{
+    width: 35%;
+    margin: auto;
+}
+.user_form .form_con{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.user_form .form_con .form_box input{
+    padding: .8rem;
+    width: 100%;
+    color: var(--text-gray-color);
+    background: var(--secondary-color);
+    border-radius: .3rem;
+    
+}
+
+.user_form .form_con input:focus{
+    color: var(--tertiary-color);
+    font-weight: 500;
+}
+
+.user_form .sign_btn{
+    padding: .8rem;
+    width: 30%;
+    margin: auto;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    border-radius: 1.5rem;
+}
+
+.sign_route{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sign_route a{
+    color: var(--tertiary-color);
+    font-weight: 500;
+    text-decoration: underline;
+}

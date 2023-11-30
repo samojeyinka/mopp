@@ -1,0 +1,113 @@
+
+.users_section {
+    width: 60%;
+    margin: auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.users_section .users_btns {
+    display: flex;
+    gap: 1rem;
+}
+.users_section .users_btns button {
+    padding:.2rem .8rem;
+   background: var(--secondary-color);
+   font-family: 'Roboto', sans-serif;
+   color: var(--tertiary-color);
+   border-radius: .3rem;
+   font-weight: 500;
+}
+
+.users_section::after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--secondary-color);
+}
+
+.users_section .users_con {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.users_section .user_box {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+.users_section .user_box::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+.user_box_img {
+    width: 6.7rem;
+    height: 6.7rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user_box_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.user_box_right .user_pf_tp{
+    display: flex;
+    flex-direction: column;
+}
+
+.user_box_right .user_pf_tp .fullname{
+    font-family: 'Roboto', sans-serif;
+    color: var(--tertiary-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.user_box_right .user_pf_tp .username{
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-gray-color);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.user_box_right .user_pf_md{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user_box_right .reactions_total{
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+.user_box_right .user_pf_bm{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.user_box_right .user_pf_bm button{
+    padding:.2rem 1.5rem;
+    border-radius: .3rem;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+}
+.user_box_right .user_pf_bm .fl_btn{
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+}

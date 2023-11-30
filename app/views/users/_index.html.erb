@@ -1,0 +1,41 @@
+<div class="users_btns mb-4">
+    <button>Suggestions</button>
+    <button>Popular users</button>
+    <button>New users</button>
+</div>
+<div class="users_con">
+    <% @users.each do |user|%>
+        <div class="user_box">
+            <div class="user_box_left">
+                <div class="user_box_img">
+                    <%= link_to user_path(user) do %>
+                        <% if user.ProfileImage.attached? %>
+                            <%= image_tag(user.ProfileImage,alt: "profile picture" , class:"user_pics") %>
+                                <% else %>
+                                    <%= image_tag("userimage.avif", alt: "profile picture" , class:"user_pics") %>
+                                        <%end%>
+                                            <%end%>
+                </div>
+            </div>
+            <div class="user_box_right">
+                <div class="user_pf_tp">
+                    <span class="fullname">
+                        <%= link_to user.fullname, user_path(user), class:"fullname"%>
+                    </span>
+                    <span class="username">@<%= link_to user.username, user_path(user), class:"username"%></span>
+                </div>
+                <div class="user_pf_md mt-1">
+                    <div>40 Followers</div>
+                    <div class="reactions_total">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="reacts_nums">73</span>
+                    </div>
+                </div>
+                <div class="user_pf_bm mt-2">
+                    <button class="fl_btn">Follow</button>
+                    <button class="dl_btn">Remove</button>
+                </div>
+            </div>
+        </div>
+        <% end %>
+</div>
