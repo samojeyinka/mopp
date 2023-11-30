@@ -1,0 +1,46 @@
+
+.error_con {
+    padding: 1rem;
+    background: rgba(255, 0, 0, 0.08);
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.error_con h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+
+}
+
+.error_con ul {
+    padding: 1rem 0;
+    position: relative;
+}
+
+.error_con ul::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(81, 36, 36);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.error_con ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.error_con .fa-circle-xmark {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+.error_con ul li span {
+    color: var(--danger-color);
+    font-weight: 500;
+}

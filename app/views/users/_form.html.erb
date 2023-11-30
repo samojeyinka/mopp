@@ -1,0 +1,28 @@
+<section class="user_form">
+    <%= render '/shared/errors', obj: @user %>
+    <%= form_with( model: @user, data:{turbo: false}, local: true, class:"form_con") do |f| %>
+    
+      <div class="form_box fullname_box">
+        <%= f.text_field :fullname, placeholder:"Enter your Full name" %>
+      </div>
+      <div class="form_box username_box">
+        <%= f.text_field :username, placeholder:"Enter username"  %>
+      </div>
+    
+      <div class="form_box email_box">
+        <%= f.email_field :email, placeholder:"Enter your Email"  %>
+      </div>
+
+      <div class="form_box password_box">
+        <%= f.password_field :password, placeholder:"Enter Password"  %>
+      </div>
+    
+    
+      
+    
+      
+        <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class:"sign_btn") %>
+      
+    <% end %>
+    </section>
+    

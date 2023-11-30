@@ -1,0 +1,71 @@
+
+.artiicle_form {
+    width: 60%;
+    margin: auto;
+}
+
+.artiicle_form .form_con {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.artiicle_form .form_con .form_box {
+    width: 100%;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.artiicle_form .form_con .form_box input,
+.artiicle_form .form_con .form_box textarea {
+    width: 100%;
+}
+
+.artiicle_form .form_con .form_box textarea {
+    height: 295px;
+    max-height: 295px;
+    min-height: 295px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+}
+
+
+.artiicle_form .title_box {
+    font-family: 'Roboto', sans-serif;
+    color: var(--tertiary-color);
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.artiicle_form .description_box {
+    color: var(--tertiary-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.artiicle_form .custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 15px;
+    background: var(--secondary-color);
+    color: var(--text-gray-color);
+    font-size: 16px;
+}
+
+.artiicle_form .form_box label {
+    color: var(--text-gray-color);
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.artiicle_form .publish_btn {
+    padding: .8rem;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}

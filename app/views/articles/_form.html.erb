@@ -1,5 +1,5 @@
 <section class="artiicle_form">
-<%= render '/shared/errors' %>
+<%= render '/shared/errors',obj:@article %>
 <%= form_with( model: @article, data:{turbo: false}, local: true, class:"form_con") do |f| %>
   <div class="form_box title_box">
     <%= f.text_field :title, placeholder:"Add title" %>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="form_box">
-    <%= f.submit "Publish", class:"publish_btn" %>
+    <%= f.submit(@article.new_record? ? "Publish" : "Update Now", class:"publish_btn") %>
   </div>
   
 <% end %>
