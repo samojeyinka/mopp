@@ -1,6 +1,6 @@
 <section class="read_articles">
     <div class="read_articles_column">
-        <% if logged_in? && @article.user == current_user %>
+        <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
         <div class="article_read_actions">
             <ul>
                 <li><i class="fa-solid fa-file-pen"></i>

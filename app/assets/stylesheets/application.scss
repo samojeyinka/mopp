@@ -240,3 +240,17 @@ h2 {
       color: black; }
       .apple_pagination a:hover, .apple_pagination a:focus {
         text-decoration: underline; }
+
+
+        .message{
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .message.success_alert{
+            background-color: green;
+        }
+
+        .message.danger_alert{
+            background-color: red;
+        }
