@@ -1,0 +1,20 @@
+<h2 class="text-center mb-4">Welcome Back</h2>
+
+<section class="user_form">
+    <%= form_with( scope: :session, url: login_path, data:{turbo: false}, local: true, class:"form_con") do |f| %>
+
+    
+      <div class="form_box email_box">
+        <%= f.email_field :email, placeholder:"Enter your Email"  %>
+      </div>
+
+      <div class="form_box password_box">
+        <%= f.password_field :password, placeholder:"Enter Password"  %>
+      </div>
+    
+      
+        <%= f.submit "Sign In", class:"sign_btn" %>
+      
+    <% end %>
+    </section>
+    

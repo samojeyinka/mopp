@@ -2,7 +2,9 @@
     <nav>
         <div class="nav-left">
             <div class="logo_box">
+                <%= link_to root_path do%>
                 <%= image_tag("logo.png", alt: "Logo" , class: "logo" ) %>
+                <% end %>
             </div>
 
             <div class="search_box">
@@ -17,16 +19,42 @@
             <ul class="links">
                 <li class="nav_link nav_link_write">
                     <i class="fa-regular fa-pen-to-square"></i>
+                    <% if logged_in? %>
                     <%= link_to 'Write', new_article_path %>
+                    <% else %>
+                    <%= link_to 'Write', signup_path %>
+                    <% end %>
                 </li>
 
+                <% if logged_in? %>
                 <button class="nav_btn nav_btn_signin">
-                    <%= link_to "Sign In" %>
+                    <%= link_to "Sign Out" , logout_path, data:{turbo_method: :delete}%>
+                </button>
+                <div class="image_nav">
+                    <%= link_to user_path(current_user) do %>
+                    <% if current_user.ProfileImage.attached?%>
+                    <%= image_tag(current_user.ProfileImage,alt: "profile picture",class:"user_img") %>
+                    <% else %>
+                        <%= image_tag("userimage.avif", alt: "profile picture", class:"user_img") %>
+                            <%end%>
+                            <%end%>
+                            
+                </div>
+
+                <button class="nav_btn nav_btn_signin">
+                    <%= link_to "Delete Account" , user_path(current_user), data:{turbo_method: :delete, turbo_confirm: "Delete my account"}%>
                 </button>
 
+                <%  else %>
+                <button class="nav_btn nav_btn_signin">
+                    <%= link_to "Sign In" , login_path%>
+                </button>
+                
                 <button class="nav_btn nav_btn_signup">
                     <%= link_to "Sign Up", signup_path %>
                 </button>
+                <% end %>
+
 
             </ul>
         </div>

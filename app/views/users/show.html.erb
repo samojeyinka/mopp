@@ -52,11 +52,17 @@
         <i class="fa-brands fa-twitter"></i>
     </div>
 
+    <div class="date_joined mt-2">
+       <p>Joined <%= time_ago_in_words(@user.created_at)%> ago</p> 
+    </div>
+
+    <% if logged_in? && @user == current_user %>
     <div class="mt-3">
        <%= link_to edit_user_path(@user) do%>
         <button class="edit_btn">Edit Profile</button>
         <% end %>
     </div>
+    <% end %>
 </div>
 
 <div class="user_blogs mt-5">
@@ -67,6 +73,9 @@
     <p class="no_blog">No blogs published yet</p>
     <% else %>
 <%= render 'articles/articles' %>
+<div class="apple_pagination mt-4">
+        <%= will_paginate @articles, :container=> false %>
+    </div>
 <% end %>
 </div>
 </div>

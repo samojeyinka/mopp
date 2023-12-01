@@ -108,3 +108,15 @@ header .nav_btn_signup {
 header .nav_btn_signup a {
     color: var(--tertiary-color);
 }
+
+.image_nav{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image_nav img{
+    width: 100%;
+    height: 100%;
+}
