@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_one_attached :ProfileImage
     validates :fullname, presence: true, length: {minimum:3, maximum:40}
     validates :username, presence: true, uniqueness: { case_sensitive: false }, length: {minimum:3, maximum:20}
+    validates :bio, length:{minimum: 3, maximum: 150}
     
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, uniqueness: { case_sensitive: false }, format: {with: VALID_EMAIL_REGEX}

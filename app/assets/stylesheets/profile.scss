@@ -1,0 +1,156 @@
+
+.profile_page {
+    width: 60%;
+    margin: auto;
+}
+
+.profile_page .flex_op {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.profile_page .flex_op::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.profile_page .flex_op h4 {
+    font-size: 1.3rem;
+}
+
+
+.profile_page .flex_op button {
+    padding: .2rem 1.5rem;
+    border-radius: .3rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+.profile_top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile_top div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.profile_top div strong {
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile_page .profile_image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    overflow: hidden;
+}
+
+.profile_page .profile_image img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile_page .profile_btm {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.profile_page .profile_btm strong {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: var(--tertiary-color);
+}
+
+.profile_page .user_bio {
+    width: 80%;
+}
+
+.profile_page .user_bio p {
+    font-size: .95rem;
+}
+
+.profile_page .user_links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile_page .user_links .fa-brands {
+    font-size: 1.2rem;
+    color: var(--tertiary-color);
+    opacity: .7;
+    cursor: pointer;
+}
+
+.profile_page .date_joined p{
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-gray-color);
+}
+
+.profile_page .edit_btn {
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    font-size: 1.2rem;
+    padding: .3rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border-radius: .6rem;
+
+}
+
+.user_blogs h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.user_blogs_box {
+    padding: 2rem 0;
+    position: relative;
+}
+
+
+
+.user_blogs_box::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+.user_blogs_box::after {
+    content: '';
+    width: 20%;
+    height: 3px;
+    background: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
