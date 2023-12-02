@@ -1,6 +1,6 @@
 <div class="profile_page">
     <div class="flex_op">
-<h4 class="text-center mb-4 profile_username">@<%= @user.username%> <%= "[Admin]" if current_user.admin? %></h4>
+<h4 class="text-center mb-4 profile_username">@<%= @user.username %><%= " [Admin]" if @user.admin? %></h4>
 <button class="fl_btn">Follow</button>
 </div>
 
