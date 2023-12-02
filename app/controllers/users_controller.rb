@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
     before_action :require_user, only: [:show]
     before_action :require_same_user, only: [:edit, :update, :destroy]
+   
 
     def show
    
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:fullname,:username, :email, :password,:ProfileImage, :bio)
+        params.require(:user).permit(:fullname, :username, :email, :password, :ProfileImage, :bio, :youtube_link, :instagram_link, :facebook_link, :twitter_link)
     end
 
     def set_user
@@ -64,6 +65,7 @@ class UsersController < ApplicationController
             redirect_to @user
         end
     end
+
 end
 
 

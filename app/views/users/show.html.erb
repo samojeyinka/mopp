@@ -1,80 +1,106 @@
 <div class="profile_page">
     <div class="flex_op">
-<h4 class="text-center mb-4 profile_username">@<%= @user.username %><%= " [Admin]" if @user.admin? %></h4>
-<button class="fl_btn">Follow</button>
-</div>
-
-<div class="profile_top mt-3">
-<div class="profile_image">
-    <% if @user.ProfileImage.attached?%>
-    <%= image_tag(@user.ProfileImage,alt: "profile picture") %>
-        <% else %>
-            <%= image_tag("userimage.avif", alt: "profile picture") %>
-                <%end%>
-</div>
-<div class="profile_blogs">
-    <strong><%= @user.articles.count %></strong>
-    <span>
-        <%if @user.articles.count == 0 %>
-        Blogs
-        <% elsif  @user.articles.count == 1%>
-            Blog
-        <% else %>
-        Blogs
-        <% end %>
-    </span>
-</div>
-<div class="profile_likes">
-    <strong>1.5M</strong>
-    <span>Likes</span>
-</div>
-<div class="profile_followers">
-    <strong>978K</strong>
-    <span>Followers</span>
-</div>
-<div class="profile_following">
-    <strong>6</strong>
-    <span>Following</span>
-</div>
-</div>
-
-<div class="profile_btm mt-3">
-    <strong><%= @user.fullname %></strong>
-    <div class="user_bio">
-        <P> <%= @user.bio %> </P>
-    </div>
-    <div class="user_links">
-        <i class="fa-brands fa-youtube"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
+        <h4 class="text-center mb-4 profile_username">@<%= @user.username %>
+                <%= " [Admin]" if @user.admin? %>
+        </h4>
+        <button class="fl_btn">Follow</button>
     </div>
 
-    <div class="date_joined mt-2">
-       <p>Joined <%= time_ago_in_words(@user.created_at)%> ago</p> 
+    <div class="profile_top mt-3">
+        <div class="profile_image">
+            <% if @user.ProfileImage.attached?%>
+                <%= image_tag(@user.ProfileImage,alt: "profile picture" ) %>
+                    <% else %>
+                        <%= image_tag("userimage.avif", alt: "profile picture" ) %>
+                            <%end%>
+        </div>
+        <div class="profile_blogs">
+            <strong>
+                <%= @user.articles.count %>
+            </strong>
+            <span>
+                <%if @user.articles.count==0 %>
+                    Blogs
+                    <% elsif @user.articles.count==1%>
+                        Blog
+                        <% else %>
+                            Blogs
+                            <% end %>
+            </span>
+        </div>
+        <div class="profile_likes">
+            <strong>1.5M</strong>
+            <span>Likes</span>
+        </div>
+        <div class="profile_followers">
+            <strong>978K</strong>
+            <span>Followers</span>
+        </div>
+        <div class="profile_following">
+            <strong>6</strong>
+            <span>Following</span>
+        </div>
     </div>
 
-    <% if logged_in? && @user == current_user %>
-    <div class="mt-3">
-       <%= link_to edit_user_path(@user) do%>
-        <button class="edit_btn">Edit Profile</button>
-        <% end %>
-    </div>
-    <% end %>
-</div>
+    <div class="profile_btm mt-3">
+        <strong>
+            <%= @user.fullname %>
+        </strong>
+        <div class="user_bio">
+            <P>
+                <%= @user.bio %>
+            </P>
+        </div>
+        <div class="user_links">
+            <% if @user.youtube_link? %>
+                <%= link_to @user.youtube_link, target: "_blank"  do%>
+                    <i class="fa-brands fa-youtube"></i>
+                    <% end %>
+                        <% end %>
 
-<div class="user_blogs mt-5">
-<h4 class="text-left">Blogs Published</h4>
+                            <% if @user.instagram_link? %>
+                                <%= link_to @user.instagram_link ,target: "_blank" do%>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <% end %>
+                                        <% end %>
+                                         <% if @user.facebook_link? %>
+                                            <%= link_to @user.facebook_link, target: "_blank" do%>
+                                                <i class="fa-brands fa-facebook"></i>
+                                                <% end %>
+                                                    <% end %>
+                                                     <% if @user.twitter_link? %>
+                                                        <%= link_to @user.twitter_link, target: "_blank" do%>
+                                                        <i class="fa-brands fa-twitter"></i>
+                                                        <% end %> 
+                                                            <% end %>
+                                                                
+        </div>
 
-<div class="user_blogs_box">
-    <% if @user.articles.count < 1%>
-    <p class="no_blog">No blogs published yet</p>
-    <% else %>
-<%= render 'articles/articles' %>
-<div class="apple_pagination mt-4">
-        <%= will_paginate @articles, :container=> false %>
+        <div class="date_joined mt-2">
+            <p>Joined <%= time_ago_in_words(@user.created_at)%> ago</p>
+        </div>
+
+        <% if logged_in? && @user==current_user %>
+            <div class="mt-3">
+                <%= link_to edit_user_path(@user) do%>
+                    <button class="edit_btn">Edit Profile</button>
+                    <% end %>
+            </div>
+            <% end %>
     </div>
-<% end %>
-</div>
-</div>
+
+    <div class="user_blogs mt-5">
+        <h4 class="text-left">Blogs Published</h4>
+
+        <div class="user_blogs_box">
+            <% if @user.articles.count < 1%>
+                <p class="no_blog">No blogs published yet</p>
+                <% else %>
+                    <%= render 'articles/articles' %>
+                        <div class="apple_pagination mt-4">
+                            <%= will_paginate @articles, :container=> false %>
+                        </div>
+                        <% end %>
+        </div>
+    </div>
 </div>

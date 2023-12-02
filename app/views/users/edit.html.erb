@@ -48,7 +48,11 @@
 
 
     <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-      Tab 3
+      <%= f.text_field :youtube_link, placeholder:"Enter your youtube link"%>
+      <%= f.text_field :instagram_link, placeholder:"Enter your Instagram link" %>
+  <%= f.text_field :facebook_link, placeholder:"Enter your facebook link" %>
+  <%= f.text_field :twitter_link, placeholder:"Enter your twitter link" %>
+
 
       <%= f.submit "Update", class:"sign_btn" %>
     </div>
