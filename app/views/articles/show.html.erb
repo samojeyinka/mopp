@@ -14,8 +14,13 @@
         </div>
         <% end %>
         <div class="thumbnail_in_read">
-
-            <%= image_tag(@article.thumbnail, width:300) if @article.thumbnail.attached?%>
+            <!-- <%= image_tag(@article.thumbnail, width:300) if @article.thumbnail.attached?%> -->
+            <% if @article.thumbnail.attached? %>
+            <%= image_tag(@article.thumbnail, width:300) %>
+            <% else %>
+            <%= image_tag('dt.jpeg', width:300) %>
+                    <%end%>
+                    
         </div>
         <h1>
             <%= @article.title%>

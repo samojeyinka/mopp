@@ -36,11 +36,16 @@
                 </div>
             </div>
             <div class="each_article_box_right">
+
                 <div class="thumbnail">
                     <%= link_to article_path(article)  do%>
-                    <%= image_tag(article.thumbnail, width:300, class:"thumbnail_img") if article.thumbnail.attached? %>
-                    <% end %>
-                </div>
+                <% if article.thumbnail.attached? %>
+                <%= image_tag(article.thumbnail, width:300, class:"thumbnail_img") %>
+                <% else %>
+                <%= image_tag('dt.jpeg', width:300, class:"thumbnail_img") %>
+                        <%end%>
+                        <% end %>
+            </div>
             </div>
         </div>
         <% end %>

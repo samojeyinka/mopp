@@ -4,7 +4,7 @@
 
 :root {
     --primary-color: #FFFDFE;
-    --secondary-color: #d5d5d57d;
+    --secondary-color: #d5d5d563;
     --tertiary-color: #151515;
     --text-gray-color: #808080;
     --success-color: #008000;
@@ -54,50 +54,4 @@ h2 {
     font-family: 'Roboto', sans-serif;
     color: var(--text-gray-color);
     border-radius: .6rem;
-}
-
-
-.tab_flex{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    gap: 2rem;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-}
-
-.nav-tabs{
-    height: 100%;
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    position: relative;
-}
-
-
-    
-.nav-tabs::after{
-    content: '';
-    height: 100%;
-    width: 2px;
-    background: var(--secondary-color);
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.nav-tabs .nav-link{
-    color: var(--text-gray-color);
-    border: none;
-    outline: none;
-    background: white;
-}
-
-.nav-tabs .nav-link.active{
-    width: 100%;
-    border: none;
-    outline: none;
-    background: var(--secondary-color);
-    color: var(--tertiary-color);
-    border-radius: 0px;
 }

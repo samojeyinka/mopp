@@ -1,82 +1,99 @@
 <h2 class="text-center mb-4">Edit your profile</h2>
 <div class="tab_flex">
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Personal details</button>
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+        aria-controls="home" aria-selected="true">Personal details</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Edit bio</button>
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
+        aria-controls="profile" aria-selected="false">Edit bio</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Social links</button>
+      <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button"
+        role="tab" aria-controls="messages" aria-selected="false">Social links</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Change password</button>
+      <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button"
+        role="tab" aria-controls="settings" aria-selected="false">Change password</button>
     </li>
   </ul>
-  
+
   <div class="tab-container">
-    <%= render '/shared/errors', obj: @user %>
+
     <%= form_with( model: @user, data:{turbo: false}, local: true, class:"form_con") do |f| %>
-  <div class="tab-content">
-    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="tab-content">
+        <%= render '/shared/errors' , obj: @user %>
+          <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane-flex">
+              <div class="form_box profile_box">
+                <%= f.label :ProfileImage %>
+                  <%= f.file_field :ProfileImage, placeholder:"Enter your image" %>
+              </div>
 
-      <div class="form_box profile_box">
-        <%= f.label :ProfileImage %>
-        <%= f.file_field :ProfileImage, placeholder:"Enter your image"  %>
+              <div class="form_box fullname_box">
+                <%= f.text_field :fullname, placeholder:"Enter your Full name" %>
+              </div>
+              <div class="form_box username_box">
+                <%= f.text_field :username, placeholder:"Enter username" %>
+              </div>
+
+              <div class="form_box email_box">
+                <%= f.email_field :email, placeholder:"Enter your Email" %>
+              </div>
+              <%= f.submit "Update" , class:"sign_btn" %>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane-flex">
+              <div class="form_box bio_box">
+                <%= f.text_area :bio, placeholder:"Tell others about yourself" %>
+              </div>
+              <%= f.submit "Update" , class:"sign_btn" %>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+            <div class="tab-pane-flex">
+              <div class="form_box password_box">
+                <%= f.text_field :youtube_link, placeholder:"Enter your youtube link"%>
+              </div>
+              <div class="form_box password_box">
+                <%= f.text_field :instagram_link, placeholder:"Enter your Instagram link" %>
+              </div>
+              <div class="form_box password_box">
+                <%= f.text_field :facebook_link, placeholder:"Enter your facebook link" %>
+              </div>
+              <div class="form_box password_box">
+                <%= f.text_field :twitter_link, placeholder:"Enter your twitter link" %>
+              </div>
+
+
+              <%= f.submit "Update" , class:"sign_btn" %>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <div class="tab-pane-flex">
+              <div class="form_box password_box">
+                <%= f.password_field :password, placeholder:"Enter New Password" %>
+              </div>
+
+              <%= f.submit "Update" , class:"sign_btn" %>
+            </div>
+          </div>
       </div>
 
-      <div class="form_box fullname_box">
-        <%= f.text_field :fullname, placeholder:"Enter your Full name" %>
-      </div>
-      <div class="form_box username_box">
-        <%= f.text_field :username, placeholder:"Enter username"  %>
-      </div>
-    
-      <div class="form_box email_box">
-        <%= f.email_field :email, placeholder:"Enter your Email"  %>
-      </div>
-      <%= f.submit "Update", class:"sign_btn" %>
-    </div>
-
-    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <div class="form_box bio_box">
-        <%= f.text_area :bio, placeholder:"Tell others about yourself"  %>
-      </div>
-      <%= f.submit "Update", class:"sign_btn" %>
-    </div>
-
-
-    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-      <%= f.text_field :youtube_link, placeholder:"Enter your youtube link"%>
-      <%= f.text_field :instagram_link, placeholder:"Enter your Instagram link" %>
-  <%= f.text_field :facebook_link, placeholder:"Enter your facebook link" %>
-  <%= f.text_field :twitter_link, placeholder:"Enter your twitter link" %>
-
-
-      <%= f.submit "Update", class:"sign_btn" %>
-    </div>
-
-
-    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-
-      <div class="form_box password_box">
-        <%= f.password_field :password, placeholder:"Enter New Password"  %>
-      </div>
-
-      <%= f.submit "Update", class:"sign_btn" %>
-    </div>
-
-
-    </div>
   </div>
-  <% end %>
-  </div>  
 </div>
-  
+<% end %>
+  </div>
+  </div>
+
   <script>
     var firstTabEl = document.querySelector('#myTab li:last-child a')
     var firstTab = new bootstrap.Tab(firstTabEl)
-  
+
     firstTab.show()
   </script>
