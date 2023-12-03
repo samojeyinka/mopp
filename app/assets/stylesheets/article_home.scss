@@ -110,7 +110,6 @@
 }
 
 .categories_flex .article_category {
-    font-size: .9rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: var(--tertiary-color);
@@ -120,6 +119,10 @@
     opacity: .8;
 }
 
+.categories_flex .article_category a{
+    font-size: .9rem;
+    color: var(--tertiary-color);
+}
 
 .reactions {
     display: flex;

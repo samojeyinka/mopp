@@ -2,4 +2,7 @@
 
 <% @categories.each do |category| %>
     <h4><%= link_to category.name, category_path(category) %></h4>
+    <!-- <p><%= category.articles.count %></p> -->
+
+    <p><%= pluralize(category.articles.count, 'article') %></p>
 <% end %>

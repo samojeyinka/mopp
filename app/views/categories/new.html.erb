@@ -1,13 +1,2 @@
 <h2 class="text-center mb-4">Create category</h2>
-<section class="user_form">
-    <%= render '/shared/errors' , obj: @category %>
-        <%= form_with( model: @category, data:{turbo: false}, local: true, class:"form_con") do |f| %>
-
-            <div class="form_box fullname_box">
-                <%= f.text_field :name, placeholder:"Category name" %>
-            </div>
-
-            <%= f.submit(@category.new_record? ? "Create " : "Update" , class:"sign_btn") %>
-
-                <% end %>
-</section>
+<%= render 'form' %>
