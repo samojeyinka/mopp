@@ -1,0 +1,5 @@
+<h4 class="text-center mb-4 profile_username">Categories lists</h4>
+
+<% @categories.each do |category| %>
+    <h4><%= link_to category.name, category_path(category) %></h4>
+<% end %>

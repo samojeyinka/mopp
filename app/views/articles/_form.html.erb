@@ -18,6 +18,14 @@
   </div>
 
   <div class="form_box">
+  <div class="col-sm-8 col-sm-offset-2">
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+      <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text } %>
+    <% end %>
+  </div>
+  </div>
+
+  <div class="form_box">
     <%= f.submit(@article.new_record? ? "Publish" : "Update Now", class:"publish_btn") %>
   </div>
   

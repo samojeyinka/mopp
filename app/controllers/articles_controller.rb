@@ -50,7 +50,7 @@ def find_article
 end
 
 def permit_fields
-    params.require(:article).permit(:title, :description, :content, :thumbnail)
+    params.require(:article).permit(:title, :description, :content, :thumbnail, category_ids:[])
 end
 
 def require_same_user

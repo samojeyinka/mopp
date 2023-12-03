@@ -25,8 +25,11 @@
                 </div>
                 <div class="each_article_box_left_bottom">
                     <div class="categories_flex">
-                        <button class="article_category">Travel</button>
-                        <button class="article_category">Football</button>
+                        <%  if article.categories.any? %>
+                        <%= render article.categories %>
+                        <% else %>
+                        <button class="article_category">Uncategorized</button>
+                        <% end %>
                     </div>
                     <div class="reactions">
                         <i class="fa-regular fa-heart"></i>
