@@ -36,6 +36,7 @@ button {
 .main {
     padding: 2rem;
     width: 90%;
+    max-width: 1920px;
     margin: auto;
 }
 
@@ -44,7 +45,7 @@ h2 {
 }
 
 
-.no_blog{
+.no_blog {
     padding: .7rem;
     width: 100%;
     text-align: center;
@@ -54,4 +55,10 @@ h2 {
     font-family: 'Roboto', sans-serif;
     color: var(--text-gray-color);
     border-radius: .6rem;
+}
+
+@media screen and (max-width:800px) {
+    .main {
+        width: 100%;
+    }
 }

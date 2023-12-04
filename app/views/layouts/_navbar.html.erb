@@ -16,27 +16,31 @@
 
         </div>
         <div class="nav-right">
-            <ul class="links">
+            <i class="fa-solid fa-bars navbar-toggle" id="navbarToggle"></i>
+            <ul class="links" id="links">
                 <li class="nav_link nav_link_write">
-                    <i class="fa-regular fa-pen-to-square"></i>
+                  
                     <% if logged_in? %>
-                    <%= link_to 'Write', new_article_path %>
+                    <%= link_to new_article_path do %>
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <%= 'Write' %>
+                    <% end %>
                     <% else %>
-                    <%= link_to 'Write', signup_path %>
+                    <%= link_to signup_path do %>
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <%= 'Write' %>
+                    <% end %>
                     <% end %>
                 </li>
-                <li><%= link_to 'Explore', users_path %></li>
+                <li class="nav_link nav_link_write"><%= link_to 'Explore', users_path %></li>
                 <% if logged_in? %>
-                <li><%= link_to 'Categories', categories_path %></li>
+                <li class="nav_link nav_link_write"><%= link_to 'Topics', categories_path %></li>
                 <% if current_user.admin? %>
-                <li><%= link_to 'Create categories', new_category_path %></li>
+                <li class="nav_link nav_link_write"><%= link_to 'Add topics', new_category_path %></li>
                 <% end %>
                 <% end %>
 
                 <% if logged_in? %>
-                <button class="nav_btn nav_btn_signin">
-                    <%= link_to "Sign Out" , logout_path, data:{turbo_method: :delete}%>
-                </button>
                 <div class="image_nav">
                     <%= link_to user_path(current_user) do %>
                     <% if current_user.ProfileImage.attached?%>
@@ -47,11 +51,6 @@
                             <%end%>
                             
                 </div>
-
-                <button class="nav_btn nav_btn_signin">
-                    <%= link_to "Delete Account" , user_path(current_user), data:{turbo_method: :delete, turbo_confirm: "Delete my account"}%>
-                </button>
-
                 <%  else %>
                 <button class="nav_btn nav_btn_signin">
                     <%= link_to "Sign In" , login_path%>
@@ -62,8 +61,41 @@
                 </button>
                 <% end %>
 
-
+            <!-- The delete account and signout nav -->
+            <% if logged_in? %>
+            <i class="fa-solid fa-bars" onclick="openMiniNav()"></i>
+            <div id="miniNav" class="mini_nav_box">
+                <i class="fa-regular fa-circle-xmark closebtn" onclick="closeMiniNav()" ></i>
+                <div class="mini_nav_links">
+                        <%= link_to "Sign Out" , logout_path, data:{turbo_method: :delete}%>
+                        <%= link_to "Delete Account" , user_path(current_user), data:{turbo_method: :delete, turbo_confirm: "Delete my account"}%>
+                </div>
+              </div>
+              <% end %>
+       
+            <!-- The delete account and signout nav ends -->
             </ul>
         </div>
     </nav>
 </header>
+
+<script>
+    const openMiniNav = () => {
+     document.getElementById("miniNav").style.width = "15rem";
+        };
+    const closeMiniNav = () => {
+     document.getElementById("miniNav").style.width = "0rem";
+        };
+
+        //The parent nav
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarLinks = document.getElementById('links');
+
+    navbarToggle.addEventListener('click', function () {
+        navbarLinks.classList.toggle('active_links');
+    });
+});
+
+    </script>

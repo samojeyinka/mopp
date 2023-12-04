@@ -5,6 +5,12 @@
     gap: 2rem;
 }
 
+@media screen and (max-width:700px){
+    .articles_container{
+        flex-direction: column;
+    }
+}
+
 .articles_main{
     width: 100%;
     border-right: 2px solid var(--secondary-color);
