@@ -4,11 +4,15 @@ class  ArticlesController < ApplicationController
     before_action :require_same_user, only: [:edit, :update, :destroy]
 
 def show
+       # Increment the view count
+       @article.increment!(:views)
 end
 
 def index
     # @articles = Article.all
-    @articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+   # @articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @articles = Article.order(views: :desc).paginate(page: params[:page], per_page: 10)
+  
 end
     
 def new
