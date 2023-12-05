@@ -14,7 +14,8 @@
                         <%= image_tag("userimage.avif", alt: "profile picture" ) %>
                             <%end%>
         </div>
-        <div class="profile_blogs">
+        <div class="profile_counts_con">
+        <div class="profile_counts">
             <strong>
                 <%= @user.articles.count %>
             </strong>
@@ -28,18 +29,19 @@
                             <% end %>
             </span>
         </div>
-        <div class="profile_likes">
+        <div class="profile_counts">
             <strong>1.5M</strong>
             <span>Likes</span>
         </div>
-        <div class="profile_followers">
+        <div class="profile_counts">
             <strong>978K</strong>
             <span>Followers</span>
         </div>
-        <div class="profile_following">
+        <div class="profile_counts">
             <strong>6</strong>
             <span>Following</span>
         </div>
+    </div>
     </div>
 
     <div class="profile_btm mt-3">
@@ -97,10 +99,7 @@
                 <p class="no_blog">No blogs published yet</p>
                 <% else %>
                     <%= render 'articles/articles' %>
-                        <div class="apple_pagination mt-4">
-                            <%= will_paginate @articles, :container=> false %>
-                        </div>
-                        <% end %>
+                    <% end %>
         </div>
     </div>
 </div>

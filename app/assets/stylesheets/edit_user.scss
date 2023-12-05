@@ -1,6 +1,4 @@
-
-
-.tab_flex{
+.tab_flex {
     width: 100%;
     height: 100%;
     display: flex;
@@ -9,7 +7,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.nav-tabs{
+.nav-tabs {
     height: 100%;
     width: 20%;
     display: flex;
@@ -19,8 +17,8 @@
 }
 
 
-    
-.nav-tabs::after{
+
+.nav-tabs::after {
     content: '';
     height: 100%;
     width: 2px;
@@ -30,14 +28,14 @@
     right: 0;
 }
 
-.nav-tabs .nav-link{
+.nav-tabs .nav-link {
     color: var(--text-gray-color);
     border: none;
     outline: none;
     background: white;
 }
 
-.nav-tabs .nav-link.active{
+.nav-tabs .nav-link.active {
     width: 100%;
     border: none;
     outline: none;
@@ -46,49 +44,73 @@
     border-radius: 0px;
 }
 
-.tab-container{
+.tab-container {
     width: 80%;
 }
 
-.tab-container .tab-content{
+.tab-container .tab-content {
     width: 70%;
     margin: auto;
 
 }
 
 
-.tab-container .form_con .form_box input, .tab-container .form_con .form_box textarea{
-padding: .8rem;
-width: 100%;
-color: var(--tertiary-color);
-background: var(--secondary-color);
-border-radius: .3rem;
+.tab-container .form_con .form_box input,
+.tab-container .form_con .form_box textarea {
+    padding: .8rem;
+    width: 100%;
+    color: var(--tertiary-color);
+    background: var(--secondary-color);
+    border-radius: .3rem;
 
 }
 
-.tab-container .form_con .form_box textarea{
+.tab-container .form_con .form_box textarea {
     border: none;
     outline: none;
     min-height: 10rem;
     max-height: 10rem;
 }
 
-.tab-container .form_con input:focus{
-color: var(--tertiary-color);
-font-weight: 500;
+.tab-container .form_con input:focus {
+    color: var(--tertiary-color);
+    font-weight: 500;
 }
 
-.tab-container .sign_btn{
-padding: .8rem;
-width: 30%;
-margin: auto;
-background: var(--tertiary-color);
-color: var(--primary-color);
-border-radius: 1.5rem;
+.tab-container .sign_btn {
+    padding: .8rem;
+    width: 30%;
+    margin: auto;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    border-radius: 1.5rem;
 }
 
-.tab-container .tab-pane-flex{
+.tab-container .tab-pane-flex {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+
+@media screen and (max-width:700px) {
+    .tab_flex {
+        flex-direction: column;
+    }
+
+    .nav-tabs {
+        width: 100%;
+        gap: 1rem;
+        flex-direction: row;
+
+    }
+
+    .tab-container {
+        width: 100%;
+    }
+
+    .tab-container .tab-content {
+        width: 100%;
+    }
+
 }
