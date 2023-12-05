@@ -16,7 +16,11 @@
 
         </div>
         <div class="nav-right">
-            <i class="fa-solid fa-bars navbar-toggle" id="navbarToggle"></i>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+            <i class="fa-solid fa-bars checkbtn"></i>
+            </label>
+
             <ul class="links" id="links">
                 <li class="nav_link nav_link_write">
                   
@@ -63,9 +67,9 @@
 
             <!-- The delete account and signout nav -->
             <% if logged_in? %>
-            <i class="fa-solid fa-bars" onclick="openMiniNav()"></i>
+            <i class="fa-solid fa-bars" onclick="actionNav()"></i>
             <div id="miniNav" class="mini_nav_box">
-                <i class="fa-regular fa-circle-xmark closebtn" onclick="closeMiniNav()" ></i>
+                <i class="fa-regular fa-circle-xmark closebtn" onclick="closeActionNav()" ></i>
                 <div class="mini_nav_links">
                         <%= link_to "Sign Out" , logout_path, data:{turbo_method: :delete}%>
                         <%= link_to "Delete Account" , user_path(current_user), data:{turbo_method: :delete, turbo_confirm: "Delete my account"}%>
@@ -80,22 +84,12 @@
 </header>
 
 <script>
-    const openMiniNav = () => {
-     document.getElementById("miniNav").style.width = "15rem";
-        };
-    const closeMiniNav = () => {
-     document.getElementById("miniNav").style.width = "0rem";
-        };
+    const actionNav = () => {
+        document.getElementById("miniNav").style.width = "15rem";
+    };
 
-        //The parent nav
-
-        document.addEventListener('DOMContentLoaded', function () {
-    const navbarToggle = document.getElementById('navbarToggle');
-    const navbarLinks = document.getElementById('links');
-
-    navbarToggle.addEventListener('click', function () {
-        navbarLinks.classList.toggle('active_links');
-    });
-});
-
-    </script>
+    const closeActionNav = () => {
+        document.getElementById("miniNav").style.width = "0rem";
+    };
+    
+</script>

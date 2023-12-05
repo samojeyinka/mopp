@@ -1,8 +1,11 @@
-<h4 class="text-center mb-4 profile_username">Categories lists</h4>
-
+<div class="topics_page">
+<h4 class="text-center mb-4 profile_username">Explore Personalized Picks</h4>
+<div class="topic_con">
 <% @categories.each do |category| %>
+    <div class="topic_box">
     <h4><%= link_to category.name, category_path(category) %></h4>
-    <!-- <p><%= category.articles.count %></p> -->
-
-    <p><%= pluralize(category.articles.count, 'article') %></p>
+     <p><%= pluralize(category.articles.count, 'blog') %></p>
+    </div>
 <% end %>
+</div>
+</div>

@@ -1,5 +1,8 @@
+<div class="show_articles_in_category">
 <h4 class="text-center mb-4 profile_username"><%= @category.name %></h4>
+<% if logged_in? && current_user.admin?%>
 <button><%= link_to 'Edit category', edit_category_path(@category) %></button>
+<% end %>
 <div class="user_blogs_box">
     <% if @category.articles.count < 1%>
         <p class="no_blog">No blog is associated to this category</p>
@@ -9,4 +12,5 @@
                     <%= will_paginate @articles, :container=> false %>
                 </div>
                 <% end %>
+</div>
 </div>

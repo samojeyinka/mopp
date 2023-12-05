@@ -33,7 +33,7 @@
                 </div>
                 <div class="user_pf_bm mt-2">
                     <button class="fl_btn">Follow</button>
-                    <button class="dl_btn">Remove</button>
+                    <button class="rm_btn">Remove</button>
                     <% if logged_in? && current_user.admin? %>
                     <%= link_to user_path(user) , data:{turbo_method: :delete, turbo_confirm: "Delete user"} do %>
                      <button class="dl_btn">Delete</button>

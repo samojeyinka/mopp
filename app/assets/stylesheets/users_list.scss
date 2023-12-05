@@ -111,3 +111,38 @@
     background: var(--tertiary-color);
     color: var(--primary-color);
 }
+.user_box_right .user_pf_bm .dl_btn{
+    background: rgba(255, 0, 0, 0.087);
+    color: var(--danger-color)
+}
+
+
+@media screen and (max-width:920px){
+    .users_section {
+        width: 90%;
+}
+}
+
+@media screen and (max-width:700px){
+    .users_section {
+        padding: 0 0;
+        width: 95%;
+}
+
+.user_box_img {
+    width: 4.7rem;
+    height: 4.7rem;
+}
+
+.users_section .users_con {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.users_section .users_btns button {
+    padding:.2rem .5rem;
+    font-size:.9rem;
+}
+
+}

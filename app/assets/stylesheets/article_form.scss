@@ -1,4 +1,3 @@
-
 .artiicle_form {
     width: 60%;
     margin: auto;
@@ -68,4 +67,18 @@
     font-size: 1.2rem;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
+}
+
+
+
+@media screen and (max-width:920px) {
+    .artiicle_form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .artiicle_form {
+        width: 90%;
+    }
 }

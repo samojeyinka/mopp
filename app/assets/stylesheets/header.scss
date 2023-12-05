@@ -171,17 +171,25 @@ ul .fa-bars {
     cursor: pointer;
 }
 
-.nav-right .navbar-toggle {
-    cursor: pointer;
+
+/* Original styles for larger screens */
+.nav-right #check {
+    display: none;
+    background-repeat: no-repeat;
+}
+
+.nav-right .checkbtn {
     display: none;
 }
 
+
 @media screen  and (max-width:800px) {
 
-    .nav-right .navbar-toggle {
-        display: block;
-         color: var(--text-gray-color);
-         font-size: 1.7rem;
+    .nav-right .checkbtn {
+        color: var(--tertiary-color);
+        display: block; 
+        font-size: 30px;
+        cursor: pointer;
     }
 
     header .nav-right .links {
@@ -190,23 +198,23 @@ ul .fa-bars {
         top: 60px;
         right: 0;
         background: var(--tertiary-color);
-        padding: 0;
+        padding:0rem;
         flex-direction: column-reverse;
         align-items: center;
         gap: 2rem;
         z-index: 10;
         overflow: hidden;
-        transition: .5s;
+        transition: .5s ease-in-out;
     }
 
     header .nav-right .links{
         padding:2rem 0;
     }
 
-    header .nav-right .active_links{
+
+    .nav-right #check:checked ~ ul {
         width: 100%;
     }
-
 header .nav-right .nav_link_write a {
     font-weight: 400;
     color: var(--primary-color);
@@ -214,7 +222,7 @@ header .nav-right .nav_link_write a {
 
 header .nav-right .nav_btn {
     width: 50%;
-    padding: .4rem .6rem;
+    padding: .6rem .6rem;
     border-radius: 1.5rem;
     font-weight: 500;
 }
@@ -241,4 +249,20 @@ header .nav_btn_signup a {
     color: var(--primary-color);
 }
     
+}
+
+@media screen and (max-width:380px){
+
+    
+header nav .nav-left {
+    gap: 1rem;
+}
+
+header nav .nav-left .logo_box {
+    width: 2rem;
+    height: 1.6rem;
+}
+    header nav {
+        width: 95%;
+    }
 }
