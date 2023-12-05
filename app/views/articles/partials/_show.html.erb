@@ -1,0 +1,87 @@
+<div class="read_articles_column">
+    <% if logged_in? && (@article.user==current_user || current_user.admin?) %>
+        <div class="article_read_actions">
+            <ul>
+                <%= link_to edit_article_path(@article) do %>
+                    <li>
+                        <i class="fa-solid fa-file-pen"></i>
+                        <%= "Edit" %>
+                    </li>
+                    <% end %>
+                        <%= link_to article_path(@article), data:{turbo_method:
+                            :delete,turbo_confirm: "Continue to delete?" } do %>
+                            <li><i class="fa-solid fa-trash"></i>
+                                <%= "Delete" %>
+                            </li>
+                            <% end %>
+            </ul>
+        </div>
+        <% end %>
+            <div class="thumbnail_in_read">
+                <!-- <%= image_tag(@article.thumbnail, width:300) if @article.thumbnail.attached?%> -->
+                <% if @article.thumbnail.attached? %>
+                    <%= image_tag(@article.thumbnail, width:300) %>
+                        <% else %>
+                            <%= image_tag('dt.jpeg', width:300) %>
+                                <%end%>
+
+            </div>
+            <h1>
+                <%= @article.title%>
+            </h1>
+            <div class="article_info">
+                <%= link_to user_path(@article.user) do %>
+                    <div class="article_profile">
+                        <div class="article_profile_img">
+                            <% if @article.user.ProfileImage.attached?%>
+                                <%= image_tag(@article.user.ProfileImage,alt: "profile picture" ,class:"user_img")
+                                    %>
+                                    <% else %>
+                                        <%= image_tag("userimage.avif", alt: "profile picture" , class:"user_img")
+                                            %>
+                                            <%end%>
+                        </div>
+                        <div class="article_profile_details">
+                            <small class="article_profile_name">
+                                <%= @article.user.fullname if @article.user %>
+                            </small>
+                            <small class="article_profile_username">@<%= @article.user.username if @article.user %>
+                                    </small>
+
+                        </div>
+                    </div>
+                    <% end %>
+                        <div class="article_date">
+                            <div class="article_date_on_read">Published on <%= @article.created_at.strftime("%b %d")
+                                    %>
+                            </div>
+                        </div>
+            </div>
+
+            <div class="article_read_desc">
+                <p>
+                    <%= @article.description%>
+                </p>
+            </div>
+            <div class="article_content">
+                <%= simple_format(@article.content) %>
+            </div>
+
+            <div class="read_articles_actions">
+                <div class="read_articles_actions_left">
+                    <div class="reactions">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="reacts">2</span>
+                    </div>
+                    <div class="reactions">
+                        <i class="fa-regular fa-comment"></i>
+                        <span class="reacts">1</span>
+                    </div>
+                </div>
+                <div class="read_articles_actions_right">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-square-whatsapp"></i>
+                </div>
+            </div>
+</div>

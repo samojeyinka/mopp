@@ -1,17 +1,18 @@
-.message{
+.message {
     width: 100%;
     padding: 1rem;
 }
 
-.message.success_alert,.message.danger_alert {
+.message.success_alert,
+.message.danger_alert {
     padding: 1rem;
     width: 100%;
     margin: auto;
     margin-bottom: 2rem;
 }
 
-.message.success_alert{
-    background:rgba(0, 128, 0, 0.266);
+.message.success_alert {
+    background: rgba(0, 128, 0, 0.266);
 }
 
 .message.danger_alert {

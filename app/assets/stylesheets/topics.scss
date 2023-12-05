@@ -1,0 +1,47 @@
+.topics_page h4 {
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.topic_con {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+}
+
+.topic_box {
+    padding: 1rem;
+    background: var(--secondary-color);
+}
+
+.topic_box h4 a {
+    color: var(--tertiary-color);
+    opacity: .9;
+}
+
+
+.topic_box h4 a:hover {
+    color: rgb(147, 99, 9);
+}
+
+.topic_box p {
+    color: var(--text-gray-color);
+    font-family: 500;
+}
+
+.topic_box .dl-ct{
+    color: red;
+}
+
+@media screen and (max-width:920px) {
+    .topic_con {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:500px) {
+    .topic_con {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

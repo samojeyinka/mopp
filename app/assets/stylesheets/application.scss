@@ -46,6 +46,8 @@ h2 {
     font-family: 'Roboto', sans-serif;
 }
 
+// The style for the message incase there is no articles/blogs
+
 
 .no_blog {
     padding: .7rem;
@@ -59,54 +61,12 @@ h2 {
     border-radius: .6rem;
 }
 
+
+
 @media screen and (max-width:920px) {
     .main {
         padding: 1rem;
         width: 100%;
 
     }
-}
-
-.topics_page h4{
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-}
-.topic_con{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
-}
-
-.topic_box{
-    padding: 1rem;
-    background: var(--secondary-color);
-}
-
-.topic_box h4 a{
-    color: var(--tertiary-color);
-    opacity: .9;
-}
-
-
-.topic_box h4 a:hover{
-    color: rgb(147, 99, 9);
-}
-
-.topic_box p{
-    color: var(--text-gray-color);
-    font-family: 500;
-}
-
-
-@media screen and (max-width:920px){
-    .topic_con{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width:500px){
-    .topic_con{
-        grid-template-columns: repeat(2, 1fr);
-    }
-
 }

@@ -183,11 +183,11 @@ ul .fa-bars {
 }
 
 
-@media screen  and (max-width:800px) {
+@media screen and (max-width:800px) {
 
     .nav-right .checkbtn {
         color: var(--tertiary-color);
-        display: block; 
+        display: block;
         font-size: 30px;
         cursor: pointer;
     }
@@ -198,7 +198,7 @@ ul .fa-bars {
         top: 60px;
         right: 0;
         background: var(--tertiary-color);
-        padding:0rem;
+        padding: 0rem;
         flex-direction: column-reverse;
         align-items: center;
         gap: 2rem;
@@ -207,61 +207,63 @@ ul .fa-bars {
         transition: .5s ease-in-out;
     }
 
-    header .nav-right .links{
-        padding:2rem 0;
+    header .nav-right .links {
+        padding: 2rem 0;
     }
 
 
-    .nav-right #check:checked ~ ul {
+    .nav-right #check:checked~ul {
         width: 100%;
     }
-header .nav-right .nav_link_write a {
-    font-weight: 400;
-    color: var(--primary-color);
+
+    header .nav-right .nav_link_write a {
+        font-weight: 400;
+        color: var(--primary-color);
+    }
+
+    header .nav-right .nav_btn {
+        width: 50%;
+        padding: .6rem .6rem;
+        border-radius: 1.5rem;
+        font-weight: 500;
+    }
+
+    header .nav_btn_signin {
+        background: var(--primary-color)
+    }
+
+    header .nav_btn_signin a {
+        color: var(--tertiary-color);
+    }
+
+
+    header .nav_btn_signup {
+        background: inherit;
+        border: 2px solid var(--primary-color);
+    }
+
+    header .nav_btn_signup a {
+        color: var(--primary-color);
+    }
+
+    .fa-bars {
+        color: var(--primary-color);
+    }
+
 }
 
-header .nav-right .nav_btn {
-    width: 50%;
-    padding: .6rem .6rem;
-    border-radius: 1.5rem;
-    font-weight: 500;
-}
-
-header .nav_btn_signin {
-    background: var(--primary-color)
-}
-
-header .nav_btn_signin a {
-    color: var(--tertiary-color);
-}
+@media screen and (max-width:380px) {
 
 
-header .nav_btn_signup {
-    background: inherit;
-    border:2px solid var(--primary-color);
-}
+    header nav .nav-left {
+        gap: 1rem;
+    }
 
-header .nav_btn_signup a {
-    color: var(--primary-color);
-}
+    header nav .nav-left .logo_box {
+        width: 2rem;
+        height: 1.6rem;
+    }
 
-.fa-bars {
-    color: var(--primary-color);
-}
-    
-}
-
-@media screen and (max-width:380px){
-
-    
-header nav .nav-left {
-    gap: 1rem;
-}
-
-header nav .nav-left .logo_box {
-    width: 2rem;
-    height: 1.6rem;
-}
     header nav {
         width: 95%;
     }

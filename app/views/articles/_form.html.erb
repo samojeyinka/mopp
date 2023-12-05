@@ -1,33 +1,34 @@
 <section class="artiicle_form">
-<%= render '/shared/errors',obj:@article %>
-<%= form_with( model: @article, data:{turbo: false}, local: true, class:"form_con") do |f| %>
-  <div class="form_box title_box">
-    <%= f.text_field :title, placeholder:"Add title" %>
-  </div>
-  <div class="form_box description_box">
-    <%= f.text_field :description, placeholder:"Enter your meta description here"  %>
-  </div>
+  <%= render '/shared/errors' ,obj:@article %>
+    <%= form_with( model: @article, data:{turbo: false}, local: true, class:"form_con") do |f| %>
+      <div class="form_box title_box">
+        <%= f.text_field :title, placeholder:"Add title" %>
+      </div>
+      <div class="form_box description_box">
+        <%= f.text_field :description, placeholder:"Enter your meta description here" %>
+      </div>
 
-  <div class="form_box">
-    <%= f.text_area :content, placeholder:"Tell us more..." %>
-  </div>
+      <div class="form_box">
+        <%= f.text_area :content, placeholder:"Tell us more..." %>
+      </div>
 
-  <div class="form_box">
-    <%= f.label :thumbnail, "Upload thumbnail" %><br/>
-    <%= f.file_field :thumbnail, class:"custom-file-upload" %>
-  </div>
+      <div class="form_box">
+        <%= f.label :thumbnail, "Upload thumbnail" %><br />
+          <%= f.file_field :thumbnail, class:"custom-file-upload" %>
+      </div>
 
-  <div class="form_box">
-  <div class="col-sm-8 col-sm-offset-2">
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
-      <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text } %>
-    <% end %>
-  </div>
-  </div>
+      <div class="form_box">
+        <div class="col-sm-8 col-sm-offset-2">
+          <%= f.label :Category, "Pick category/categories" %><br />
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+            <% cb.label(class: "checkbox-inline input_checkbox" ) {cb.check_box(class: "checkbox" ) + cb.text } %>
+              <% end %>
+        </div>
+      </div>
 
-  <div class="form_box">
-    <%= f.submit(@article.new_record? ? "Publish" : "Update Now", class:"publish_btn") %>
-  </div>
-  
-<% end %>
+      <div class="form_box">
+        <%= f.submit(@article.new_record? ? "Publish" : "Update Now" , class:"publish_btn") %>
+      </div>
+
+      <% end %>
 </section>

@@ -1,26 +1,23 @@
-    class PagesController < ApplicationController
-        # def home
-        #    @articles = Article.order("RANDOM()").paginate(page: params[:page], per_page: 10)
-        #    @trending_articles = Article.order(views: :desc).paginate(page: params[:page], per_page: 5)
-        #    @latest_articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+class PagesController < ApplicationController
+  # Action to render the home page
+  def home
+    # Load random articles for the home page
+    @articles = Article.order("RANDOM()").paginate(page: params[:page], per_page: 10)
 
-        #     # category controller
-        #     @categories = Category.all
-        # end
+    # Load trending articles based on views for the home page
+    @trending_articles = Article.order(views: :desc).paginate(page: params[:page], per_page: 5)
 
-        def home
-            @articles = Article.order("RANDOM()").paginate(page: params[:page], per_page: 10)
-            @trending_articles = Article.order(views: :desc).paginate(page: params[:page], per_page: 5)
-            @latest_articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
-          
-            # Load categories for the home page
-            @categories = Category.all
-          end
-          
-        
-        def about
+    # Load the latest articles for the home page
+    @latest_articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
 
-        end
-        
+    # Load all categories for the home page
+    @categories = Category.all
+  end
+
+  # Action to render the about page
+  def about
+    
+  end
 end
+
 

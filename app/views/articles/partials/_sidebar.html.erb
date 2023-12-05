@@ -1,0 +1,107 @@
+<div class="articles_sidebar">
+    <div class="categories_sidebar_con">
+        <h5>Find Topics That Interest You</h5> 
+    <div class="categories_sidebar_box">
+        <% @categories.each do |category|%>
+        <button><%= link_to category.name, category_path(category) %></button>
+        <% end %>
+    </div>
+   
+    </div>
+    <div class="articles_sidebar_con">
+        <h5>Trending <i class="fa-solid fa-fire"></i></h5>
+        <div class="flex_articles_boxes">
+            <% @trending_articles.each_with_index do |article, index| %>
+            <!-- calc index of the whole page of the pagination -->
+            <% page_number = (@trending_articles.current_page - 1) * @trending_articles.per_page + index + 1 %>
+                <!-- ------ -->
+            <div class="each_article_box">
+                <div class="each_article_box_right">
+    
+                    <div class="thumbnail">
+                        <!-- index for each trending articles -->
+                        <%= link_to article_path(article)  do%>
+                        <div class="ranking_number"><%= sprintf('%02d', page_number) %></div>
+                        <% end %>
+                        
+
+                        <!-- ---------------- -->
+                </div>
+                </div>
+                <div class="each_article_box_left">
+                    <div class="each_article_box_left_top">
+                        <div class="user_img_index">
+                            <%= link_to user_path(article.user) do %>
+                            <% if article.user.ProfileImage.attached?%>
+                            <%= image_tag(article.user.ProfileImage,alt: "profile picture",class:"user_img") %>
+                            <% else %>
+                                <%= image_tag("userimage.avif", alt: "profile picture", class:"user_img") %>
+                                    <%end%>
+                        </div>
+                     
+                        <div class="username_index">@<%= article.user.username if article.user%></div>
+                        <% end %>
+                        <!-- <div class="created_date_index">@ <%= time_ago_in_words(article.created_at)%></div> -->
+                        <div class="created_date_index"><%= article.created_at.strftime("%b %d") %>
+                        </div>
+                    </div>
+                    <div class="each_article_box_left_middle">
+                        <h4><%= link_to truncate(article.title, length: 60), article_path(article),class:"article_title" %></h4>
+                    </div>
+                </div>
+                
+            </div>
+            <% end %>
+            <div class="apple_pagination mt-0">
+                <%= will_paginate @trending_articles, :container=> false %>
+            </div>
+        </div>
+    </div>
+    <div class="articles_sidebar_con">
+        <h5>Latest <i class="fa-regular fa-clock"></i></h5>
+        <div class="flex_articles_boxes">
+            <% @latest_articles.each do |article| %>
+            <div class="each_article_box">
+                <div class="each_article_box_right">
+    
+                    <div class="thumbnail">
+                        <%= link_to article_path(article)  do%>
+                        <% if article.thumbnail.attached? %>
+                        <%= image_tag(article.thumbnail, width:300, class:"thumbnail_img") %>
+                        <% else %>
+                        <%= image_tag('dt.jpeg', width:300, class:"thumbnail_img") %>
+                                <%end%>
+                                <% end %>
+                    
+                </div>
+                </div>
+                <div class="each_article_box_left">
+                    <div class="each_article_box_left_top">
+                        <div class="user_img_index">
+                            <%= link_to user_path(article.user) do %>
+                            <% if article.user.ProfileImage.attached?%>
+                            <%= image_tag(article.user.ProfileImage,alt: "profile picture",class:"user_img") %>
+                            <% else %>
+                                <%= image_tag("userimage.avif", alt: "profile picture", class:"user_img") %>
+                                    <%end%>
+                        </div>
+                     
+                        <div class="username_index">@<%= article.user.username if article.user%></div>
+                        <% end %>
+                        <!-- <div class="created_date_index">@ <%= time_ago_in_words(article.created_at)%></div> -->
+                        <div class="created_date_index"><%= article.created_at.strftime("%b %d") %>
+                        </div>
+                    </div>
+                    <div class="each_article_box_left_middle">
+                        <h4><%= link_to truncate(article.title, length: 60), article_path(article),class:"article_title" %></h4>
+                    </div>
+                </div>
+                
+            </div>
+            <% end %>
+            <div class="apple_pagination mt-0">
+                <%= will_paginate @latest_articles, :container=> false %>
+            </div>
+        </div>
+    </div>
+</div>
