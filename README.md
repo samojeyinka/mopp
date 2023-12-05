@@ -2,7 +2,7 @@
 
 🚧 **Work in Progress** 🚧
 
-I'm actively working on this project and will be updating the repository regularly. Feel free to check back for the latest features and code additions. Your feedback and contributions are always welcome!
+I'm actively working on this project and will be updating the repository regularly. Feel free to check back for the latest features and code additions. Your feedback and opinion are always welcome!
 
 ---
 
