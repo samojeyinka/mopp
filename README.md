@@ -6,6 +6,18 @@ I'm actively working on this project and will be updating the repository regular
 
 ---
 
+### Demo
+
+![m1](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/d1039df7-5b5b-4fe0-95ef-c066af11e715)
+![m2](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/a786e63f-839b-47d1-91ae-12cc5b632c0a)
+![m3](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/84c673da-6e7b-44eb-ad71-a73c68520e8c)
+![m4](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/a4b5743f-6c6b-492b-9945-0ca255aa10b2)
+![m5](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/4ec51b45-bb97-4a88-8ae4-39d74723769b)
+![m6](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/d10b99ca-775e-43d6-a9bd-3e30298edba2)
+
+
+
+
 ## README
 
 This README provides an overview of the steps necessary to get the Ruby on Rails application up and running. Please follow the instructions below:
