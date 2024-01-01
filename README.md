@@ -6,7 +6,8 @@ I'm actively working on this project and will be updating the repository regular
 
 ---
 
-### [Demo](https://mopp-app-f094fba44bf3.herokuapp.com/){:target="_blank"}
+### Demo
+👉 https://mopp-app-f094fba44bf3.herokuapp.com/
 
 
 ![m1](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/d1039df7-5b5b-4fe0-95ef-c066af11e715)
