@@ -7,6 +7,7 @@ I'm actively working on this project and will be updating the repository regular
 ---
 
 ### Demo
+👉https://mopp-app-f094fba44bf3.herokuapp.com/
 
 ![m1](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/d1039df7-5b5b-4fe0-95ef-c066af11e715)
 ![m2](https://github.com/samojeyinka/MultiB-Online-publishing-platform/assets/131479901/a786e63f-839b-47d1-91ae-12cc5b632c0a)
