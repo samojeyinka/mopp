@@ -92,7 +92,18 @@ test:
 #
 production:
   <<: *default
+<<<<<<< HEAD
   database: app_production
   username: app
   password: <%= ENV["APP_DATABASE_PASSWORD"] %>
    url: <%= ENV['DATABASE_URL'] %>
+=======
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: <%= ENV['POSTGRES_DB'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: <%= ENV['PGHOST'] %>
+  port: <%= ENV['PGPORT'] %>
+>>>>>>> e4d07f8eda18351f0e729d71ced0dd351a78fba3
